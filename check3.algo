@@ -1,0 +1,22 @@
+FUNCTION searching(arr) : ARRAY_OF_INTEGER
+VAR
+    i,j:INTEGER
+BEGIN
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        VAR key:=arr[i];
+        VAR j:=i-1;
+        WHILE (j>=0 AND arr[j]>key) DO
+            arr[j+1]=arr[j]
+            j:=j-1;
+        END_WHILE
+        arr[j+1]:=key;
+    END_FOR
+    RETURN arr ;
+END
+ALGORITHM search
+VAR
+    arr:ARRAY_OF INTEGER[10];
+    i,j:INTEGER;
+BEGIN
+    write(searching([arr]));
+END
